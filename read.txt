@@ -1,0 +1,14 @@
+1. connection class created also added method to execute selct or other queries that will be accepted as arg.
+
+2. Create database db.txt
+
+3. Creater all include jsp files in include folder jsp files
+
+4. Create login module 
+   -user-login.jsp
+   -dashboard.jsp
+   -userLogin.java  servlet
+
+5. Creating all jsp files first
+   
+

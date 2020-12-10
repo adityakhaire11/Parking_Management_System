@@ -1,0 +1,83 @@
+//admin table
+
+CREATE TABLE `PMS`.`tbladmin` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `AdminName` varchar(120) DEFAULT NULL,
+  `UserName` varchar(120) DEFAULT NULL,
+  `MobileNumber` bigint DEFAULT NULL,
+  `Email` varchar(200) DEFAULT NULL,
+  `Password` varchar(120) DEFAULT NULL,
+  `adminregdate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `PMS`.`tbladmin` VALUES (1,'userRK','RK',8765345267,'tyj329@yahoo.com','user123','2020-11-10 06:44:02');
+
+ ///category table
+CREATE TABLE `PBM`.`tblcategory` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `VehicleCat` varchar(120) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+INSERT INTO `PMS`.`tblcategory` VALUES (1,'Six Wheeler Vehicles','2020-11-1 15:01:49'),(2,'Four Wheeler Vehicle','2020-11-1 15:02:10'),(3,'Two Wheeler Vehicle','2020-11-1 15:02:22'),(4,'Bicycles','2020-11-1 15:02:39');
+
+
+//tblparkingseatcapacity table
+
+CREATE TABLE `PMS`.`tblParkingSeatCapacity` (
+  `parking_seat` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `tblParkingSeatCapacity` VALUES (29);
+
+ //user table
+ CREATE TABLE `PMS`.`tbluser` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(100) DEFAULT NULL,
+  `mobile` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(400) DEFAULT NULL,
+  `uname` varchar(45) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO `tbluser` 
+VALUES 
+(1,'Sam Kay','7276763516','samk33@gmail.com','Wakad,Wakanda','sam','java@1991'),
+(2,'Soh Brut','7278487576','sohB@gmail.com','Maltim,Minar','soh','jsp@123'),
+(3,'Arun Pandit','8275684132','arunpandit@gmail.com','Kay,Amati','arun','abc123'),
+(4,'Gous Tim','9856321478','tim@yahoo.com','Patoda, Buston.','tim','12345'),
+(5,'Javed Ali','8855223369','javedAli@gmail.com','Pune','javed','jdbc@1991');
+
+
+// vehicle table 
+CREATE TABLE `PMS`.`tblvehicle` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `ParkingNumber` varchar(120) DEFAULT NULL,
+  `VehicleCategory` varchar(120) NOT NULL,
+  `VehicleCompanyname` varchar(120) DEFAULT NULL,
+  `RegistrationNumber` varchar(120) DEFAULT NULL,
+  `OwnerName` varchar(120) DEFAULT NULL,
+  `OwnerContactNumber` bigint DEFAULT NULL,
+  `InTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OutTime` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `parkingcharge` varchar(120) DEFAULT NULL,
+  `remark` mediumtext,
+  `status` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+INSERT INTO `tblvehicle` 
+VALUES 
+(1,'9523521','Bicycles','Atlas','AT-255266','Sam Kay',9404308673,'2020-11-01 14:10:33','2020-05-31 07:03:07','12','NA','Out'),
+(2,'7100365','Four Wheeler Vehicle','Innova','INO-256347','Soh Brut',7276763516,'2020-05-23 14:12:59','2020-11-01 07:03:37','120','NA','Out'),
+(3,'1648760','Bicycles','Activa','AC-255288','Arun Pandit',8258631478,'2020-05-23 14:15:00','2020-11-02 07:03:54','12','NA','Out'),
+(4,'4285240','Two Wheeler Vehicle','Activa','AC-585263','Gous Tim',7456893516,'2020-05-24 03:03:17','2020-11-03 07:04:51','45','NA','Out'),
+(5,'7460074','Six Wheeler Vehicles','Hero Honda','HR-252369','Javed Ali',8258631478,'2020-11-05 09:51:37','2020-06-09 06:18:26','150','NA','Out'),
+(6,'9915681','Six Wheeler Vehicles','Tata','ST-258963','Sam Kay',7276763516,'2020-11-05 03:11:17','2020-05-31 07:04:15','150','NA','Out'),
+(7,'5208856','Four Wheeler Vehicle','Audi','AU-258963','Sam Kay',7276763516,'2020-11-05 06:48:24','2020-05-31 07:02:36','30','NA','Out'),
+(8,'1377145','Four Wheeler Vehicle','TATA','TA-258698','Arvind Kadam',9874563210,'2020-11-06 06:17:43','2020-06-09 06:40:01','30','NA','Out');
